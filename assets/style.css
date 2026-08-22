@@ -190,3 +190,66 @@ footer a:hover{color:var(--ink)}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rise{opacity:1;transform:none}
 }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* --- séquence d'ouverture --- */
+@keyframes rise-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pop-in{0%{opacity:0;transform:scale(.35)}68%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes nav-drop{from{opacity:0;transform:translate(-50%,-26px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes photo-in{from{opacity:0;transform:translateY(30px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes disc-in{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+@keyframes mask-up{from{transform:translateY(105%)}to{transform:translateY(0)}}
+
+.nav{animation:nav-drop .8s cubic-bezier(.2,.8,.3,1) .05s both}
+.me{animation:photo-in 1s cubic-bezier(.2,.8,.3,1) .18s both}
+.disc{animation:disc-in .9s cubic-bezier(.2,.8,.3,1) .1s both}
+.halo{animation:disc-in 1.2s ease-out .1s both, halo-spin 34s linear infinite 1.3s}
+.hero h1{overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.hero h1 span.line{display:block;animation:mask-up .95s cubic-bezier(.2,.85,.25,1) .38s both}
+.hero .role{animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .62s both}
+.hero .cta{animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .76s both}
+
+/* les bulles arrivent une à une, puis se mettent à flotter */
+.o1{animation:pop-in .8s cubic-bezier(.2,.9,.3,1.3) .8s both, bob 7.5s ease-in-out 1.7s infinite}
+.o2{animation:pop-in .8s cubic-bezier(.2,.9,.3,1.3) .92s both, bob 8.6s ease-in-out 1.9s infinite}
+.o3{animation:pop-in .8s cubic-bezier(.2,.9,.3,1.3) 1.04s both, bob 6.4s ease-in-out 2.0s infinite}
+.o4{animation:pop-in .8s cubic-bezier(.2,.9,.3,1.3) 1.14s both, bob 9.2s ease-in-out 2.2s infinite}
+
+/* --- décor vivant --- */
+@keyframes halo-spin{to{transform:rotate(360deg)}}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(4vw,-3vh,0) scale(1.14)}}
+.sky span{animation:drift 26s ease-in-out infinite alternate}
+.sky span:nth-child(2){animation-duration:34s;animation-delay:-9s}
+.sky span:nth-child(3){animation-duration:30s;animation-delay:-17s}
+
+/* --- apparition au défilement, en cascade --- */
+.rise{transition-delay:calc(var(--i, 0) * 90ms)}
+.grid3 .card{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1),box-shadow .32s ease}
+.grid3.in .card{opacity:1;transform:none}
+.grid3.in .card:nth-child(1){transition-delay:60ms}
+.grid3.in .card:nth-child(2){transition-delay:180ms}
+.grid3.in .card:nth-child(3){transition-delay:300ms}
+.pills .pill{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.3,1),background .25s ease}
+.pills.in .pill{opacity:1;transform:none}
+.pills.in .pill:nth-child(1){transition-delay:40ms}
+.pills.in .pill:nth-child(2){transition-delay:130ms}
+.pills.in .pill:nth-child(3){transition-delay:220ms}
+.pills.in .pill:nth-child(4){transition-delay:310ms}
+
+/* --- micro-interactions --- */
+.btn:active,.pill:active,.card.link:active{transform:translateY(1px) scale(.985)}
+.nav a{position:relative}
+.card .mark{transition:transform .5s cubic-bezier(.2,.8,.3,1)}
+a.card:hover .mark{transform:scale(1.08) rotate(8deg)}
+.insta:hover .ring{animation:halo-spin 6s linear infinite}
+.proj .tag{transition:background .3s ease,color .3s ease}
+a.proj:hover .tag{background:rgba(10,132,255,.1);color:var(--c2)}
+
+@media (prefers-reduced-motion:reduce){
+  .nav,.me,.disc,.halo,.hero h1 span.line,.hero .role,.hero .cta,
+  .o1,.o2,.o3,.o4,.sky span{animation:none!important}
+  .grid3 .card,.pills .pill{opacity:1!important;transform:none!important}
+}

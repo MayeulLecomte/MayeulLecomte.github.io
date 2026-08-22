@@ -23,10 +23,31 @@ document.querySelectorAll('.reveal-mail').forEach(function(el){
 });
 var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-var io = new IntersectionObserver(function(es){
-  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:.12, rootMargin:'0px 0px -8%'});
-document.querySelectorAll('.rise').forEach(function(el){ reduce ? el.classList.add('in') : io.observe(el); });
+// Apparition au défilement. On teste la position réelle plutôt qu'un IntersectionObserver :
+// un saut de plusieurs écrans d'un coup laissait des blocs invisibles.
+var targets = [].slice.call(document.querySelectorAll('.rise, .reveal'));
+function revealVisible(){
+  for(var i = targets.length - 1; i >= 0; i--){
+    var r = targets[i].getBoundingClientRect();
+    if(r.top < innerHeight * 0.9){        // dans l'écran, ou déjà dépassé
+      targets[i].classList.add('in');
+      targets.splice(i, 1);
+    }
+  }
+}
+if(reduce){
+  targets.forEach(function(el){ el.classList.add('in'); });
+} else {
+  revealVisible();
+  var ticking = false;
+  addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ revealVisible(); ticking = false; });
+  }, {passive:true});
+  addEventListener('resize', revealVisible, {passive:true});
+  addEventListener('load', revealVisible);
+}
 
 if(!reduce && matchMedia('(hover: hover)').matches){
   var els = [].slice.call(document.querySelectorAll('.orb'));

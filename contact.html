@@ -24,15 +24,20 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%235e5ce6'/><stop offset='1' stop-color='%230a84ff'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><circle cx='36' cy='34' r='13' fill='white' opacity='.6'/></svg>">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/style.css">
+<noscript><style>.rise,.grid3 .card,.pills .pill{opacity:1!important;transform:none!important}</style></noscript>
 <style>
+.anim-title{animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .26s both}
+.contact-page .contact-lede{animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .34s both}
 .contact-page{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
 .contact-page .avatar{
+  animation:pop-in .9s cubic-bezier(.2,.9,.3,1.25) .1s both;
   width:104px;height:104px;border-radius:50%;margin:0 auto 26px;overflow:hidden;
   background:conic-gradient(from 210deg,#cfe0ff,#dcd9ff,#e9d6ff,#ffd9cf,#d6f0ff,#cfe0ff);
   box-shadow:0 20px 40px -18px rgba(30,40,90,.4), inset 0 0 0 1px rgba(255,255,255,.7);
 }
 .contact-page .avatar img{width:125%;height:auto;max-width:none;margin-left:-12.5%;margin-top:6%;display:block}
 .mail-line{
+  animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .42s both;
   display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:18px 30px;border-radius:999px;
   background:rgba(255,255,255,.75);border:1px solid var(--line);
   font-size:clamp(1rem,3.4vw,1.35rem);font-weight:500;letter-spacing:-.02em;text-decoration:none;
@@ -42,6 +47,7 @@
 }
 .mail-line:hover{transform:translateY(-2px);background:#fff}
 .insta{
+  animation:rise-in .8s cubic-bezier(.2,.8,.3,1) .56s both;
   display:block;text-decoration:none;max-width:430px;margin:34px auto 0;padding:16px;
   border-radius:var(--r-lg);background:var(--glass);border:1px solid rgba(255,255,255,.75);
   backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);
@@ -84,8 +90,8 @@
 <main>
   <section class="wrap contact contact-page">
     <div class="avatar"><img src="assets/mayeul-rond.png" alt="Mayeul Lecomte" width="1086" height="860"></div>
-    <h2>Écrivez-moi</h2>
-    <p>Un enregistrement, un mixage, un projet web&nbsp;: parlons-en.</p>
+    <h2 class="anim-title">Écrivez-moi</h2>
+    <p class="contact-lede">Un enregistrement, un mixage, un projet web&nbsp;: parlons-en.</p>
 
     <div>
       <a class="mail-line reveal-mail" href="#"><span class="ico">✉️</span> <span class="lbl">Afficher mon email</span></a>
@@ -107,7 +113,7 @@
       </div>
     </a>
 
-    <div class="pills">
+    <div class="pills reveal">
       <a class="pill" href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">🎙 lmstudio-nantes.fr</a>
       <a class="pill" href="https://maps.apple.com/?q=88+Avenue+de+la+Baraudière,+44000+Nantes" target="_blank" rel="noopener">📍 Nantes</a>
     </div>
