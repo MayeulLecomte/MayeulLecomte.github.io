@@ -31,7 +31,7 @@
   background:linear-gradient(155deg,#dfe7ff,#f4e6ff);
   box-shadow:0 20px 40px -18px rgba(30,40,90,.4), inset 0 0 0 1px rgba(255,255,255,.7);
 }
-.contact-page .avatar img{width:205%;height:auto;max-width:none;margin-left:-52%;margin-top:1%;display:block}
+.contact-page .avatar img{width:200%;height:auto;max-width:none;margin-left:-21%;margin-top:9%;display:block}
 .mail-line{
   display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:18px 30px;border-radius:999px;
   background:rgba(255,255,255,.75);border:1px solid var(--line);
@@ -54,7 +54,8 @@
   width:52px;height:52px;border-radius:50%;flex:none;padding:2.5px;display:block;
   background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);
 }
-.ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 16%;border:2.5px solid var(--bg)}
+.ring-in{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;border:2.5px solid var(--bg);background:var(--bg)}
+.ring-in img{width:200%;height:auto;max-width:none;margin-left:-21%;margin-top:9%;display:block}
 .who{display:flex;flex-direction:column;line-height:1.25;flex:1;min-width:0}
 .who b{font-size:15.5px;font-weight:600;letter-spacing:-.02em}
 .who i{font-style:normal;font-size:13px;color:var(--muted)}
@@ -92,7 +93,7 @@
 
     <a class="insta" id="insta" href="https://www.instagram.com/mayeul_lecomte/" target="_blank" rel="noopener">
       <div class="insta-head">
-        <span class="ring"><img src="assets/mayeul.png" alt="" width="842" height="860"></span>
+        <span class="ring"><span class="ring-in"><img src="assets/mayeul.png" alt="" width="842" height="860"></span></span>
         <span class="who">
           <b>@mayeul_lecomte</b>
           <i>Instagram</i>
