@@ -340,7 +340,7 @@ footer a:hover{color:var(--ink)}
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // L'adresse est reconstituée ici pour ne pas l'exposer en clair aux robots spammeurs.
-var MAIL = ['mayeul.lecomte','gmail.fr'].join('@');
+var MAIL = ['mayeul.lecomte','gmail.com'].join('@');
 document.querySelectorAll('.reveal-mail').forEach(function(el){
   el.addEventListener('click', function(e){
     if(!el.classList.contains('shown')){
