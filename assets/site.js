@@ -25,7 +25,7 @@ var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Apparition au défilement. On teste la position réelle plutôt qu'un IntersectionObserver :
 // un saut de plusieurs écrans d'un coup laissait des blocs invisibles.
-var targets = [].slice.call(document.querySelectorAll('.rise, .reveal'));
+var targets = [].slice.call(document.querySelectorAll('.rise, .reveal, .index'));
 function revealVisible(){
   for(var i = targets.length - 1; i >= 0; i--){
     var r = targets[i].getBoundingClientRect();

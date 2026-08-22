@@ -27,9 +27,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%235e5ce6'/><stop offset='1' stop-color='%230a84ff'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><circle cx='36' cy='34' r='13' fill='white' opacity='.6'/></svg>">
 <link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<noscript><style>.rise,.row,.pills .pill{opacity:1!important;transform:none!important}</style></noscript>
 
 <script type="application/ld+json">
 {
@@ -53,97 +55,95 @@
   "sameAs":["https://lmstudio-nantes.fr","https://www.instagram.com/mayeul_lecomte/"]
 }
 </script>
-
-<link rel="stylesheet" href="assets/style.css">
-<noscript><style>.rise,.grid3 .card,.pills .pill{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-<body>
+<body id="top">
 
-<div class="sky" aria-hidden="true"><span></span><span></span><span></span></div>
+<header class="topbar">
+  <a class="mark" href="#top">Mayeul Lecomte</a>
+  <nav>
+    <a href="#studio">Studio</a>
+    <a href="#projets">Projets</a>
+    <a class="keep" href="contact.html">Contact</a>
+  </nav>
+</header>
 
-<nav class="nav">
-  <a class="brand" href="#top">Mayeul Lecomte</a>
-  <a href="#studio">Studio</a>
-  <a href="#projets">Projets</a>
-  <a class="keep" href="contact.html">Contact</a>
-</nav>
+<main>
 
-<main id="top">
+  <section class="hero">
+    <div class="wash" aria-hidden="true"><span></span><span></span><span></span></div>
 
-  <section class="hero wrap">
-    <div class="stage">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="disc" aria-hidden="true"></div>
-      <img class="me" src="assets/mayeul.png" alt="Mayeul Lecomte, créateur de LM Studio à Nantes" width="842" height="860" fetchpriority="high">
-      <div class="orb o1" aria-hidden="true"><b>Studio</b></div>
-      <div class="orb o2" aria-hidden="true"><b>Code</b></div>
-      <div class="orb o3" aria-hidden="true"></div>
-      <div class="orb o4" aria-hidden="true"></div>
-    </div>
-
-    <h1><span class="line">Mayeul Lecomte</span></h1>
-    <p class="role"><b>Ingénieur du son</b> et <b>développeur</b>. Fondateur de LM&nbsp;Studio, à Nantes.</p>
-
-    <div class="cta">
-      <a class="btn btn-primary reveal-mail" href="#contact"><span class="lbl">Me contacter</span> <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="#projets">Voir mes projets</a>
-    </div>
-  </section>
-
-  <section class="wrap intro rise">
-    <p>Bonjour, je m'appelle Mayeul Lecomte. Je suis ingénieur du son et développeur, installé à Nantes.</p>
-    <p>J'ai fondé LM Studio afin d'offrir aux artistes un lieu d'enregistrement à la hauteur de leurs projets&nbsp;: prise de voix, mixage, mastering. En parallèle, je conçois et développe des applications web, de la première maquette à la mise en ligne.</p>
-  </section>
-
-  <section id="studio" class="wrap">
-    <a class="card studio rise" href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">
-      <div class="mark" aria-hidden="true"></div>
-      <div class="txt">
-        <div class="eyebrow warm"><i></i> Mon studio</div>
-        <h2>LM Studio</h2>
-        <p>Studio d'enregistrement à Nantes. Prise de voix, mixage, mastering&nbsp;— tarifs, matériel et réservation sur le site.</p>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Nantes — France</p>
+        <h1>
+          <span class="l"><span>Ingénieur du son</span></span>
+          <span class="l"><span><span class="amp">&amp;</span> développeur</span></span>
+        </h1>
+        <p class="lede">Je fais sonner les morceaux des autres, et je construis les outils web que j'aurais voulu trouver.</p>
+        <a class="cta-line" href="#studio">Voir le studio <span aria-hidden="true">→</span></a>
       </div>
-      <span class="go"><span>lmstudio-nantes.fr</span> <span class="arrow">↗</span></span>
+
+      <div class="hero-figure">
+        <div class="glow" aria-hidden="true"></div>
+        <img class="me" src="assets/mayeul.png" alt="Mayeul Lecomte, ingénieur du son et développeur à Nantes" width="842" height="860" fetchpriority="high">
+        <span class="orb o1" aria-hidden="true"></span>
+        <span class="orb o2" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <a class="panel" id="studio" href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">
+      <span class="dot" aria-hidden="true"></span>
+      <span>
+        <b>LM Studio — Nantes</b>
+        <small>Prise de voix · Mixage · Mastering</small>
+      </span>
+      <span class="go" aria-hidden="true">↗</span>
     </a>
   </section>
 
-  <section id="projets" class="wrap rise">
-    <div class="eyebrow"><i></i> Développement</div>
-    <h2 style="font-size:clamp(1.8rem,4.2vw,2.6rem)">Ce que je développe</h2>
-    <div class="grid3 reveal">
-      <a class="card proj" href="https://mayeullecomte.github.io/sillon/" target="_blank" rel="noopener">
-        <h3>MySaphir <span class="arrow">↗</span></h3>
-        <p>Des conseils musicaux par style, écrits comme une chronique plutôt que servis par un algorithme.</p>
-        <span class="tag">Musique · Web</span>
-      </a>
-      <a class="card proj" href="https://mayeullecomte.github.io/veille-marine/" target="_blank" rel="noopener">
-        <h3>MyNav <span class="arrow">↗</span></h3>
-        <p>Les infos utiles aux marins réunies au même endroit, lisibles d'un coup d'œil.</p>
-        <span class="tag">Mer · Données</span>
-      </a>
-    </div>
+  <section class="statement rise">
+    <p>Bonjour, je m'appelle <span class="s">Mayeul Lecomte</span>. Je suis ingénieur du son et développeur, installé à Nantes.</p>
+    <p class="sub">J'ai fondé LM Studio afin d'offrir aux artistes un lieu d'enregistrement à la hauteur de leurs projets : prise de voix, mixage, mastering. En parallèle, je conçois et développe des applications web, de la première maquette à la mise en ligne.</p>
   </section>
 
-  <section id="contact" class="wrap contact rise">
-    <h2>On en parle&nbsp;?</h2>
-    <p>Un enregistrement, un mixage, un projet web&nbsp;: parlons-en.</p>
+  <section class="index" id="projets">
+    <div class="index-head">
+      <span class="eyebrow">Développement</span>
+      <h2>Ce que je développe</h2>
+    </div>
+
+    <a class="row" href="https://mayeullecomte.github.io/sillon/" target="_blank" rel="noopener">
+      <span class="t">MySaphir</span>
+      <span class="d">Des conseils musicaux par style, écrits comme une chronique plutôt que servis par un algorithme.</span>
+      <span class="tag">Musique · Web</span>
+      <span class="go" aria-hidden="true">↗</span>
+    </a>
+
+    <a class="row" href="https://mayeullecomte.github.io/veille-marine/" target="_blank" rel="noopener">
+      <span class="t">MyNav</span>
+      <span class="d">Les infos utiles aux marins réunies au même endroit, lisibles d'un coup d'œil.</span>
+      <span class="tag">Mer · Données</span>
+      <span class="go" aria-hidden="true">↗</span>
+    </a>
+  </section>
+
+  <section class="band rise" id="contact">
+    <h2>On en <span class="s">parle</span> ?</h2>
+    <p class="sub">Un enregistrement, un mixage, un projet web.</p>
     <div class="pills reveal">
-      <a class="pill reveal-mail" href="#contact"><span class="ico">✉️</span> <span class="lbl">Afficher mon email</span></a>
+      <a class="pill reveal-mail" href="contact.html"><span class="ico">✉️</span> <span class="lbl">Afficher mon email</span></a>
       <a class="pill" href="https://www.instagram.com/mayeul_lecomte/" target="_blank" rel="noopener">📷 @mayeul_lecomte</a>
       <a class="pill" href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">🎙 lmstudio-nantes.fr</a>
       <a class="pill" href="https://maps.apple.com/?q=88+Avenue+de+la+Baraudière,+44000+Nantes" target="_blank" rel="noopener">📍 Nantes</a>
-      <!-- Ton email : décommente et remplace pour l'afficher publiquement
-      <a class="pill" href="mailto:ton@email.fr">✉️ ton@email.fr</a>
-      -->
     </div>
-
-    <footer>
-      <span>© <span id="year">2026</span> Mayeul Lecomte — Nantes</span>
-      <span><a href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">lmstudio-nantes.fr</a></span>
-    </footer>
   </section>
 
 </main>
+
+<footer>
+  <span>© <span id="year">2026</span> Mayeul Lecomte — Nantes</span>
+  <span><a href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">lmstudio-nantes.fr</a></span>
+</footer>
 
 <script src="assets/site.js" defer></script>
 </body>
