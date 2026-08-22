@@ -307,12 +307,16 @@ footer a:hover{color:var(--ink)}
   .hero h1 .l>span{white-space:nowrap}
 }
 @media (max-width:900px){
-  .hero{align-items:center;padding-top:96px}
+  .hero{align-items:flex-start;padding-top:0}
   .hero h1{font-size:clamp(2.4rem,9vw,4rem)}
   .o1{width:54px;height:54px;left:-2%}
   .o2{width:38px;height:38px}
-  .hero-inner{grid-template-columns:1fr;padding-bottom:clamp(120px,20vh,180px);gap:clamp(26px,6vw,44px)}
-  .hero-figure{justify-self:center;max-width:min(360px,74vw);order:-1}
+  .hero-inner{
+    grid-template-columns:1fr;
+    padding-top:64px;padding-bottom:clamp(118px,17vh,165px);
+    gap:clamp(18px,4vw,32px);
+  }
+  .hero-figure{justify-self:center;max-width:min(330px,68vw);order:-1}
   .hero-text{text-align:left}
   .hero .lede{max-width:none}
   .panel{left:var(--gut);right:var(--gut)}
