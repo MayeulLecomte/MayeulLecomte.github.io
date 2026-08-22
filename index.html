@@ -168,6 +168,13 @@ section{padding-top:clamp(64px,9vw,118px);padding-bottom:clamp(64px,9vw,118px)}
 .btn-ghost{background:rgba(255,255,255,.72);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .btn-ghost:hover{transform:translateY(-2px);background:#fff}
 .arrow{transition:transform .25s ease}
+.reveal-mail .lbl{transition:opacity .2s ease}
+.reveal-mail.shown .arrow{display:none}
+.reveal-mail.shown{animation:pop .45s cubic-bezier(.2,.8,.3,1)}
+@keyframes pop{0%{transform:scale(.94)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+.copied{
+  display:inline-block;margin-left:9px;font-size:12.5px;font-weight:500;opacity:.7;
+}
 .btn:hover .arrow{transform:translateX(3px)}
 
 /* ---------- texte ---------- */
@@ -270,7 +277,7 @@ footer a:hover{color:var(--ink)}
     <p class="role">Créateur de <b>LM Studio</b>, à Nantes. Et <b>développeur</b>.</p>
 
     <div class="cta">
-      <a class="btn btn-primary" href="#contact">Me contacter <span class="arrow">→</span></a>
+      <a class="btn btn-primary reveal-mail" href="#contact"><span class="lbl">Me contacter</span> <span class="arrow">→</span></a>
       <a class="btn btn-ghost" href="#projets">Voir mes projets</a>
     </div>
   </section>
@@ -313,6 +320,7 @@ footer a:hover{color:var(--ink)}
     <h2>On en parle&nbsp;?</h2>
     <p>Un morceau à enregistrer, un projet à développer.</p>
     <div class="pills">
+      <a class="pill reveal-mail" href="#contact"><span class="ico">✉️</span> <span class="lbl">Afficher mon email</span></a>
       <a class="pill" href="https://lmstudio-nantes.fr" target="_blank" rel="noopener">🎙 lmstudio-nantes.fr</a>
       <a class="pill" href="https://maps.apple.com/?q=88+Avenue+de+la+Baraudière,+44000+Nantes" target="_blank" rel="noopener">📍 Nantes</a>
       <!-- Ton email : décommente et remplace pour l'afficher publiquement
@@ -330,6 +338,28 @@ footer a:hover{color:var(--ink)}
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// L'adresse est reconstituée ici pour ne pas l'exposer en clair aux robots spammeurs.
+var MAIL = ['mayeul.lecomte','gmail.fr'].join('@');
+document.querySelectorAll('.reveal-mail').forEach(function(el){
+  el.addEventListener('click', function(e){
+    if(!el.classList.contains('shown')){
+      e.preventDefault();
+      el.querySelector('.lbl').textContent = MAIL;
+      var ico = el.querySelector('.ico'); if(ico) ico.textContent = '✉️';
+      el.setAttribute('href','mailto:'+MAIL);
+      el.classList.add('shown');
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(MAIL).then(function(){
+          var tag = document.createElement('span');
+          tag.className = 'copied'; tag.textContent = 'copié';
+          el.appendChild(tag);
+          setTimeout(function(){ tag.remove(); }, 2200);
+        }).catch(function(){});
+      }
+    }
+  });
+});
 var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 var io = new IntersectionObserver(function(es){
